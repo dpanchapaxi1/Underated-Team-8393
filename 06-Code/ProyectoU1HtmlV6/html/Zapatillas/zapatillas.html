@@ -34,6 +34,24 @@
         font-family:'Bahnschrift Light' ;
         size: "3";
       }
+	a:link {
+		color:#20AABB;}
+    a:visited {
+		color:#FFFFFF;}
+    a:hover {
+	    color:#1402F7;
+	    font-size:150%;
+	    background:#66ff66;
+	    font-family:monospace;
+	    text-decoration:underline;}
+	a:active {
+		color:#059271
+	}
+
+
+
+	
+
   
   </style>
 </head>
@@ -51,12 +69,12 @@
 <table cellpadding="15" width="200" border="1">
   <tbody>
     <tr>
-      <th scope="col"><a href="../../Index.html">Inicio</a></th>
-      <th scope="col"><a href="zapatillas.html">Zapatillas</a></th>
-      <th scope="col"><a href="../Ropa/Ropa.html">Ropa</a></th>
-      <th scope="col"><a href="../Articulos Deportivos/Articulos Deportivos.html">Artículos Deportivos</a></th>
-      <th scope="col"><a href="../Contactanos/Contactanos.html">Contactos y Servicios</a></th>
-      <th scope="col"><a href="../Preventa/preventa.html">Preventas</a></th>
+      <th class="In" scope="col"><a href="../../Index.html">Inicio</a></th>
+      <th class="Za" scope="col"><a href="zapatillas.html">Zapatillas</a></th>
+      <th class="Ro" scope="col"><a href="../Ropa/Ropa.html">Ropa</a></th>
+      <th class="Ar" scope="Col"><a href="../Articulos Deportivos/Articulos Deportivos.html">Artículos Deportivos</a></th>
+      <th class="Co" scope="Col"><a href="../Contactanos/Contactanos.html">Contactos y Servicios</a></th>
+      <th class="PR" scope="Col"><a href="../Preventa/preventa.html">Preventas</a></th>
     </tr>
   </tbody>
 </table>
@@ -68,7 +86,7 @@
     Entregas personales en Ibarra<br>
     Envíos a todo Ecuador</p>
   <center>
-  <h1><font face="Bahnschrift Light" size="10" color="#840C46">Modelos disponibles</font></h1>
+  <h1><font face="Bahnschrift Light" size="10" color="#08A1C3">Modelos disponibles</font></h1>
 <table width="200" border="0">
     <tr>
         <td><img src="img/o10.jpg" width="300" height="200" alt=""></td>
@@ -96,24 +114,24 @@
     </tr>
 </table>
 
-  <font face="Bahnschrift Light" size="5" color="#840C46">Realizar una compra</font>
+  <font face="Bahnschrift Light" size="5" color="#08A1C3">Realizar una compra</font>
   <form method="get">
     <center>
         <table>
             <caption></caption>
             <tr>
-                <td><label for="name">NAME:</label></td>
+                <td><label for="name">NOMBRE:</label></td>
                 <td><input type="text" name="usuario" id="usuario" pattern="^([A-Za-z]+)$" required/></td>
             
             </tr>
             <tr>
-                <td><label for="name">LAST NAME:</label></td>
+                <td><label for="name">APELLIDO:</label></td>
                 <td><input type="text" name="usuario" id="usuario" pattern="^([A-Za-z]+)$" required/></td>
         
             </tr>
 
             <tr>
-                <td><label for="id">ID:</label></td>
+                <td><label for="id">CÉDULA/RUC:</label></td>
                 <td><input type="text" pattern="[0-9]+" maxlength="10" minlength="10" required/></td>
             </tr>
 
