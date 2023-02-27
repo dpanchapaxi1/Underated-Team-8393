@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="../../css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Sofia+Sans:wght@100&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<script src="../../js/ContactValidation.js"></script>
 </head>
 
 <body>
@@ -41,32 +42,34 @@
 <center>
   <h2>Tienes alguna queja? Cuentanos a continuación</h2>
   <form>
-    <fieldset>
-      <legend>Datos Necesarios</legend>
       <table cellpadding="15">
         <tr>
           <td><label for="name">Nombre:</label></td>
-          <td><input type="text"></td>   
+          <td><input type="text" id="name" onblur="return validateName()" required></td>  
+          <td><span id="name-error" class="error-message"></span> </td>
         </tr>
         <tr>
           <td><label for="lastname">Apellido:</label></td>
-          <td><input type="text"></td>   
+          <td><input type="text" id="lastname"  onblur="return validateLastName()" required></td>
+          <td><span id="last-error" class="error-message"></span> </td>   
         </tr>
         <tr>
           <td><label for="ID">Cedula/RUC:</label></td>
-          <td><input type="text"></td>   
+          <td><input type="text" id="identification" pattern="[0-9]{10}" maxlength="10" onblur="return validateIdentification()" required></td>  
+          <td><span id="id-error" class="error-message"></span> </td>    
         </tr>
         <tr>
           <td><label for="email">Correo:</label></td>
-          <td><input type="email" placeholder="ejem: eperez@outlook.com"></td>
+          <td><input type="email" placeholder="ejem: eperez@outlook.com" required></td>
          </tr>
          <tr>
           <td><label for="service">Registre su fecha</label></td>
-          <td><input type="date" name="date" id="date" required="required"/></td>
+          <td><input type="date" name="date" id="date"  onblur="return  validarFecha(event)" required/></td>
+          <td><span id="date-error" class="error-message"></span> </td>   
          </tr>
          <tr>
-          <td><label for="buy">Compro algún articulo?:</label></td>
-          <td><input type="radio" id="yes" name="buy" value="yes" checked>
+          <td><label for="buy">Compro algun articulo?:</label></td>
+          <td><input type="radio" id="yes" name="buy" value="yes" checked required>
               <label for="male">Si compre un/varios articulos</label><br>
               <input type="radio" id="no" name="buy" value="no">
               <label for="female">No compre ningun articulo</label><br>
@@ -74,7 +77,7 @@
           </tr>
           <tr>
            <td><label for="service">Su atencion fue:</label></td>
-           <td><select id="service" name="service">
+           <td><select id="service" name="service" required>
             <option>Tienda Fisica</option>
             <option>Tienda Virtual</option>
             </select></td>
@@ -98,7 +101,6 @@
 
           </tr>
       </table>
-    </fieldset>
   </form>
 <h1>Contáctanos</h1>
 <h3>Teléfono: 0987898366</h3>
