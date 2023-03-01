@@ -5,6 +5,7 @@
 <link rel="stylesheet" type="text/css" href="../../css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Sofia+Sans:wght@100&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<script src="../../js/ZapatillasValidation.js"></script>
 <title>UnderratedEc</title>
 </head>
 
@@ -76,41 +77,44 @@
             <caption></caption>
             <tr>
                 <td><label for="name">NAME:</label></td>
-                <td><input type="text" name="usuario" id="usuario" pattern="^([A-Za-z]+)$" required/></td>
-            
+                <td><input type="text" id="name" name="name"  onblur="return validateName()" required/></td>
+                <td><span id="name-error" class="error-message"></span> </td>
             </tr>
             <tr>
-                <td><label for="name">LAST NAME:</label></td>
-                <td><input type="text" name="usuario" id="usuario" pattern="^([A-Za-z]+)$" required/></td>
-        
+                <td><label for="lastname">LAST NAME:</label></td>
+                <td><input type="text" name="lastname" id="lastname"  onblur="return validateLastName()" required/></td>
+                <td><span id="last-error" class="error-message"></span> </td>
             </tr>
 
             <tr>
                 <td><label for="id">ID:</label></td>
-                <td><input type="text" pattern="[0-9]+" maxlength="10" minlength="10" required/></td>
+                <td><input type="text" id="identification" pattern="[0-9]+" maxlength="10" minlength="10" onblur="return validateIdentification()" required/></td>
+                <td><span id="id-error" class="error-message"></span> </td>
             </tr>
 
             <tr>
                 <td><label for="mail">GMAIL:</label></td>
-                <td><input type="email" id="mail" name="use_mail" required/></td>
+                <td><input type="email" id="mail" name="mail" required/></td>
             </tr>
             <tr>
                 <td><label for="ID">PHONE NUMBER:</label></td>
-                <td><input type="tel" pattern="[0-9]+" maxlength="10" id="phone" minlength="10"name="phone" required/></td>    
+                <td><input type="tel" pattern="[0-9]+" maxlength="10" id="phone" minlength="10"name="phone" onblur="return  validatePhone()" required/></td> 
+                <td><span id="phone-error" class="error-message"></span> </td>   
               </tr>
             <tr>
                 <td><label for="gender">GENDER:</label></td>
-                <td><input type="radio" id="male" name="gender" value="M" required/>
+                <td><input type="radio" id="male" name="male" value="M" required/>
                     <label for="male">Male</label><br>
-                    <input type="radio" id="female" name="gender" value="F" required/>
+                    <input type="radio" id="female" name="female" value="F" required/>
                     <label for="female">Female</label><br>
-                    <input type="radio" id="none" name="gender" value="N" required/>
+                    <input type="radio" id="none" name="none" value="N" required/>
                     <label for="none">None</label>
                 </td>
             </tr>
             <tr>
                 <td><label for="service">RECORD THE DATE:</label></td>
-                <td><input type="date" name="date" id="date" required="required"/></td>
+                <td><input type="date" name="date" id="date" onblur="return  validateDate(event)" required="required"/></td>
+                <td><span id="date-error" class="error-message"></span> </td>
                </tr>
             <tr>
                 <td><label for="Diseño" >SHOE BRAND:</label></td>
