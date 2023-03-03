@@ -6,6 +6,8 @@
 <link rel="stylesheet" type="text/css" href="../../css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Sofia+Sans:wght@100&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<script src="../../js/RopaValidation.js"></script>
+<title>UnderratedEc</title>
 </head>
 
 <body>
@@ -61,20 +63,30 @@
                 </caption>
                 <caption>Ingrese los datos para su compra:</caption>
                 <tr>
-                    <td><label for="Nombre">Nombre:</label></td>
-                    <td><input type="text" id="Nombre" name="Nombre"></td>
-                </tr>
-                <tr>
-                    <td><label for="Apellido">Apellido:</label></td>
-                    <td><input type="text" id="Apellido" name="Apellido"></td>
-                </tr>
-                <tr>
-                    <td><label for="Diseño">Elija el género:</label></td>
-                    <td><input type="radio" checked id="Deportivo" name="Diseño" value="d">
-                        <label for="Deportivo">Hombre</label><br>
-                        <input type="radio" id="Casual" name="Diseño" value="c">
-                        <label for="Casual">Mujer</label><br>
-                </tr>
+                  <td><label for="name">Nombre:</label></td>
+                  <td><input type="text" id="name" name="name"  onblur="return validateName()" required/></td>
+                  <td><span id="name-error" class="error-message"></span> </td>
+              </tr>
+              <tr>
+                  <td><label for="lastname">Apellido:</label></td>
+                  <td><input type="text" name="lastname" id="lastname"  onblur="return validateLastName()" required/></td>
+                  <td><span id="last-error" class="error-message"></span> </td>
+              </tr>  
+              <tr>
+                <td><label for="id">Código Ropa:</label></td>
+                <td><input type="text" id="identification" pattern="[0-9]+" maxlength="10" minlength="10" onblur="return validateIdentification()" required/></td>
+                <td><span id="id-error" class="error-message"></span> </td>
+            </tr>
+            <tr>
+              <td><label for="gender">Elija el género:</label></td>
+              <td><input type="radio" id="male" name="gender" value="M" required/>
+                  <label for="male">Mujer</label><br>
+                  <input type="radio" id="female" name="gender" value="F" required/>
+                  <label for="female">Hombre</label><br>
+                  <input type="radio" id="none" name="gender" value="N" required/>
+                  <label for="none">None</label>
+              </td>
+          </tr>
                 <tr>
                     <td><label for="Tipo">Elija el tipo de prenda:</label></td>
                     <td><select name="select">
@@ -110,15 +122,15 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><label for="Pago">Forma de pago: </label></td>
-                    <td><input type="radio" checked id="efectivo" name="Pago" value="e">
-                        <label for="efectivo">Efectivo</label><br>
-                        <input type="radio" id="crédito" name="Pago" value="c">
-                        <label for="crédito">Crédito</label><br>
-                        <input type="radio" id="transferencia" name="Pago" value="t">
-                        <label for="transferencia">Transferencia</label><br>
-                    </td>
-                </tr>
+                  <td><label for="gender">Forma de pago:</label></td>
+                  <td><input type="radio" id="male" name="gender" value="M" required/>
+                      <label for="male">Efectivo</label><br>
+                      <input type="radio" id="female" name="gender" value="F" required/>
+                      <label for="female">Crédito</label><br>
+                      <input type="radio" id="none" name="gender" value="N" required/>
+                      <label for="none">Transferencia</label>
+                  </td>
+              </tr>
                 <tr>
                     <td><input type="submit" value="Aceptar" name="Aceptar"></td>
                     <td><input type="reset" value="Cancelar" name="Cancelar"></td>
