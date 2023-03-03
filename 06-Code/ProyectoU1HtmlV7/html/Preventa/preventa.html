@@ -41,46 +41,11 @@
 <center>
   <h2>Llena el formulario de preventa</h2>
   <form>
-      <table cellpadding="15">
-        <tr>
-          <td><label for="name">Nombre:</label></td>
-          <td><input type="text"></td>   
-        </tr>
-        <tr>
-          <td><label for="lastname">Apellido:</label></td>
-          <td><input type="text"></td>   
-        </tr>
-        <tr>
-          <td><label for="located">Dirección:</label></td>
-          <td><input type="text" placeholder="Calle Principal y secundaria"></td>   
-        </tr>
-        <tr>
-          <td><label for="ID">Cedula/RUC:</label></td>
-          <td><input type="text"></td>   
-        </tr>
-        <tr>
-          <td><label for="email">Correo:</label></td>
-          <td><input type="email" placeholder="ejem: eperez@outlook.com"></td>
-         </tr>
-         <tr>
-          <td><label for="service">Fecha:</label></td>
-          <td><input type="date" name="date" id="date" required="required"/></td>
-         </tr>
-         <tr>
-          <td><label for="buy">Terminos y Condiciones:</label></td>
-          <td><input type="radio" id="yes" name="buy" value="yes" checked>
-              <label for="male">Aceptar todo</label><br>
-              <input type="radio" id="no" name="buy" value="no">
-              <label for="female">No acepto</label><br>
-             </td>
-          </tr>
-          
-         
-      </table>
+        
        <table cellpadding="15" >
          <tr>
            <td><label for="ID">ID producto:</label></td>
-           <td><input type="text"></td>   
+           <td><input type="text" id="idProducts" pattern="[a-zA-Z]\d{4}"></td>   
          </tr>
          <tr>
            <td><label for="ID">Cantidad: </label></td>
